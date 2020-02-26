@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="PaymentScreenWidget">
+        <t t-jquery=".js_set_customer" t-operation="after">
+            <button>BOLETA</button>
+        </t>
+    </t>
+
+    <t t-extend='ClientListScreenWidget'>
+        <t t-jquery='.client-list thead tr' t-operation='append'>
+            <th>Email</th>
+        </t>
+    </t>
+    <t t-extend='ClientLine'>
+        <t t-jquery='tr' t-operation='append'>
+            <td><t t-esc='partner.email' /></td>
+        </t>
+    </t>
+</templates>

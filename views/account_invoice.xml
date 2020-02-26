@@ -1,0 +1,19 @@
+<odoo>
+    <record id="account_invoice_form_view" model="ir.ui.view">
+        <field name="name">account.invoice.form.view</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="team_id" options="{'no_create': 1, 'no_create_edit': 1}"/>
+                <field name="sp_id" readonly="1" string="Movimiento de POS"/>
+                <field name="qr_image" widget="image" width="100" height="100" invisible="1"/>
+                <field name="suffix" invisible="1"/>
+                <field name="prefix" invisible="1"/>
+            </field>
+            <field name="date_invoice" position="replace">
+                <field name="date_issue" invisible="0"/>
+            </field>
+        </field>
+    </record>
+</odoo>

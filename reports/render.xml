@@ -1,0 +1,15 @@
+<odoo>
+    <template id="account_invoice_report_template" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[2]" position="after">
+            <div style="width:700px; height:110px;float:left;">
+                <div style="width:100px;height:100px;float:left;">
+                    <span t-field="o.qr_image" t-field-options='{"widget": "image"}' />
+                </div>
+                <strong>FECHA DE EMI.: </strong><span t-field="o.date_issue" /><br/>
+                <strong>Número de serie: </strong><span t-field="o.suffix" /><br/>
+                <strong>NUMERO DE correlativo: </strong><span t-field="o.prefix" /><br/>
+                <strong>Canal de Ventas: </strong><span t-field="o.team_id" />
+            </div>
+        </xpath>
+    </template>
+</odoo>
